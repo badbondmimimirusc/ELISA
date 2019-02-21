@@ -16,7 +16,7 @@ import java.util.List;
 public class SortDic {
 
 	public SortDic() {
-		// TODO Auto-generated constructor stub
+// TODO Auto-generated constructor stub
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -30,22 +30,23 @@ public class SortDic {
 				list.add(line);
 
 				line = br.readLine();
-			}
+		}
+			
 			list.sort(String.CASE_INSENSITIVE_ORDER);
 			for (int i = 0; i < list.size(); i++) {
 				list.set(i, encode(list.get(i)));
 				System.out.println(list.get(i));
-			}
 		}
+	}
 
 		Path file = Paths.get("sphinx_data_small/etc/voxforge_edited2.dic");
 		Files.write(file, list, Charset.forName("UTF-8"));
 	}
 
 	static String encode(String input) {
-		input = input.replace("ü", "%ue%");
-		input = input.replace("ö", "%oe%");
-		input = input.replace("ä", "%ae%");
+		input = input.replace("Ã¼", "%ue%");
+		input = input.replace("Ã¶", "%oe%");
+		input = input.replace("Ã¤", "%ae%");
 		return input;
 	}
 }
