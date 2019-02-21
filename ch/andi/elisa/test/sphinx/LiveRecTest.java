@@ -17,10 +17,10 @@ public class LiveRecTest {
 		configuration_de.setGrammarName("my_model");
 		configuration_de.setUseGrammar(true);
 
-		// configuration.setSampleRate(8000);
+// configuration.setSampleRate(8000);
 
-		// System.setProperty("java.util.logging.config.file",
-		// "ignoreAllSphinx4LoggingOutput");
+// System.setProperty("java.util.logging.config.file",
+// "ignoreAllSphinx4LoggingOutput");
 		LiveSpeechRecognizer recognizer = new LiveSpeechRecognizer(configuration_de);
 
 		recognizer.startRecognition(true);
@@ -40,9 +40,9 @@ public class LiveRecTest {
 	}
 
 	static String decode(String input) {
-		input = input.replace("%ue%", "ü");
-		input = input.replace("%oe%", "ö");
-		input = input.replace("%ae%", "ä");
+		input = input.replace("%ue%", "Ã¼");
+		input = input.replace("%oe%", "Ã¶");
+		input = input.replace("%ae%", "Ã¤");
 		return input;
 	}
 }
